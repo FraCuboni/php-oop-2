@@ -10,4 +10,4 @@ $productsArray = [new Types(
 )];
 
 
-var_dump($productsArray);
+var_dump($db);
