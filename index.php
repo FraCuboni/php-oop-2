@@ -2,8 +2,8 @@
 
 // collegamenti
 require_once __DIR__ . '/Models/Products.php';
-require_once __DIR__ . '/Models/Categories.php';
-require_once __DIR__ . '/Models/Types.php';
+require_once __DIR__ . '/Models/CatProducts.php';
+require_once __DIR__ . '/Models/DogProducts.php';
 require_once __DIR__ . '/data/db.php';
 
 
@@ -26,17 +26,21 @@ require_once __DIR__ . '/data/db.php';
         <div class="row">
             <!-- inizio foreach -->
             <?php
+            foreach ($db as $product):
             ?>
-            <div class="card" style="width: 18rem;">
-                <div class="card-header">
-                    <h5><?php  ?></h5>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-header">
+                        <h5><?php  ?></h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><?php echo $product->getProductName()  ?></li>
+                        <li class="list-group-item"><?php echo $product->getProductPrice()  ?></li>
+                        <li class="list-group-item"><?php echo $product->getProductDescription()  ?></li>
+                        <li class="list-group-item"><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><?php echo $product->getProductLink()  ?></a></li>
+                        <li class="list-group-item"><?php echo $product->type  ?></li>
+                    </ul>
                 </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><?php  ?></li>
-                    <li class="list-group-item"><?php  ?></li>
-                </ul>
-            </div>
-            <?php ?>
+            <?php endforeach; ?>
             <!-- fine foreach -->
         </div>
     </div>

@@ -1,23 +1,38 @@
 <?php
 
 // collegamenti
-require_once __DIR__ . '/Categories.php';
-require_once __DIR__ . '/Types.php';
 
 class Products
 {
     public $name;
-    public $prices;
+    public $price;
     public $description;
     public $link;
-    public $categories;
 
-    public function __construct(string $name, float $prices, string $description, string $link, Categories $categories)
+    public $type = 0;
+
+    public function __construct(string $name, float $price, string $description, string $link)
     {
         $this->name = $name;
-        $this->prices = $prices;
+        $this->price = $price;
         $this->description = $description;
         $this->link = $link;
-        $this->categories = $categories;
+    }
+
+    public function getProductName()
+    {
+        return $this->name;
+    }
+    public function getProductPrice()
+    {
+        return $this->price . '$';
+    }
+    public function getProductDescription()
+    {
+        return $this->description;
+    }
+    public function getProductLink()
+    {
+        return $this->link;
     }
 }
