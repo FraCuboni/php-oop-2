@@ -11,6 +11,29 @@ class Products
     public $description;
     public $link;
     public $image;
-    public $cathegory;
+    public $category;
     public $type;
+
+    public function __construct(string $name, float $prices, string $description, string $link, string $image, string $category, string $type)
+    {
+        $this->name = $name;
+        $this->prices = $prices;
+        $this->description = $description;
+        $this->link = $link;
+        $this->image = $image;
+        $this->category = $category;
+        $this->type = $type;
+    }
 }
+
+$productsArray = [new Products(
+    'girogio',
+    '123',
+    'girogio',
+    'girogio',
+    'girogio',
+    'girogio',
+    'girogio'
+)];
+
+var_dump($productsArray);
