@@ -2,6 +2,8 @@
 
 // collegamenti
 require_once __DIR__ . '/Models/Products.php';
+require_once __DIR__ . '/Models/Categories.php';
+require_once __DIR__ . '/Models/Types.php';
 require_once __DIR__ . '/data/db.php';
 
 
